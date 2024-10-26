@@ -1,121 +1,57 @@
-/* Global Styles */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #3A3A3A, #1A1A1A);
-    color: #EEE;
-}
-
-/* Background Image Overlay */
-.background-overlay {
-    background-image: url('images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
-    z-index: -1;
-}
-
-/* Header Styles */
-.sticky-header {
-    position: fixed;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px 0;
-    z-index: 10;
-}
-
-.header-content {
+/* Hero Section */
+.hero {
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     text-align: center;
+    color: #fff;
 }
 
-.profile-pic {
-    border-radius: 50%;
-    width: 150px;
-    margin-top: 20px;
+.hero .hero-content {
+    animation: fadeIn 2s ease-in;
 }
 
-/* Navigation */
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
+.hero h1 {
+    font-size: 3em;
+    margin: 0.5em 0;
 }
 
-nav ul li {
-    margin: 0 15px;
+.hero p {
+    font-size: 1.5em;
+    color: #FFD700;
 }
 
-nav ul li a {
-    color: #FFF;
-    text-decoration: none;
-    padding: 10px 20px;
-    transition: background 0.3s, color 0.3s;
-}
-
-nav ul li a:hover {
+.btn {
+    padding: 10px 25px;
     background: #FF914D;
-    color: #000;
-}
-
-/* Section Titles */
-.section-title {
-    font-size: 2em;
-    color: #FF914D;
-    text-align: center;
-    margin-top: 50px;
-}
-
-/* Card Styles */
-.card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-.skills-grid, .contact-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.skill-item, .contact-item {
-    margin: 10px;
-    padding: 10px 20px;
-    background: #555;
+    color: #fff;
+    border: none;
     border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
     transition: background 0.3s;
 }
 
-.skill-item:hover, .contact-item:hover {
-    background: #FF914D;
+.btn:hover {
+    background: #E74C3C;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+/* Typing Animation */
+.typed-text {
+    display: inline-block;
+    border-right: 2px solid #FFD700;
+    animation: typing 3s steps(15), blink-caret 0.75s step-end infinite;
 }
 
-.social-links a {
-    margin: 0 10px;
-    color: #FFF;
-    font-size: 24px;
-    transition: color 0.3s;
+/* Section Styles */
+.section {
+    padding: 60px 0;
 }
 
-.social-links a:hover {
-    color: #FF914D;
+.skills-grid, .testimonials-grid {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
 }
