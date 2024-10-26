@@ -1,57 +1,68 @@
-/* Hero Section */
-.hero {
-    background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background: linear-gradient(to right, #2b5876, #4e4376);
+    color: #fff;
+}
+
+.header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
     text-align: center;
-    color: #fff;
 }
 
-.hero .hero-content {
-    animation: fadeIn 2s ease-in;
+.header img {
+    border-radius: 50%;
+    width: 150px;
 }
 
-.hero h1 {
-    font-size: 3em;
-    margin: 0.5em 0;
+.header h1 {
+    font-size: 2.5em;
+    margin-top: 10px;
 }
 
-.hero p {
-    font-size: 1.5em;
-    color: #FFD700;
+.main-nav {
+    background: #444;
 }
 
-.btn {
-    padding: 10px 25px;
-    background: #FF914D;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #E74C3C;
-}
-
-/* Typing Animation */
-.typed-text {
-    display: inline-block;
-    border-right: 2px solid #FFD700;
-    animation: typing 3s steps(15), blink-caret 0.75s step-end infinite;
-}
-
-/* Section Styles */
-.section {
-    padding: 60px 0;
-}
-
-.skills-grid, .testimonials-grid {
+.main-nav ul {
     display: flex;
-    gap: 15px;
     justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.main-nav ul li {
+    margin: 0 15px;
+}
+
+.main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.section {
+    padding: 40px 20px;
+}
+
+.about-section, .experience-section, .education-section, .skills-section, .projects-section, .contact-section {
+    background: rgba(0, 0, 0, 0.7);
+    margin: 20px 0;
+}
+
+.timeline, .skill-bars, .project-gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill-bar {
+    height: 10px;
+    background: #4caf50;
+}
+
+.project-item {
+    flex: 1;
+    margin: 10px;
 }
