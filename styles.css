@@ -1,0 +1,88 @@
+/* Import Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer components {
+  /* Section heading styles */
+  .section-heading {
+    @apply text-3xl font-bold text-gray-900 mb-8 text-center;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-lg p-6 shadow-sm;
+  }
+
+  /* Primary button styles */
+  .btn-primary {
+    @apply bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 
+    transition-colors duration-200;
+  }
+
+  /* Secondary button styles */
+  .btn-secondary {
+    @apply border border-white text-white px-6 py-3 rounded-lg 
+    hover:bg-white hover:text-gray-900 transition-colors duration-200;
+  }
+
+  /* Navigation link styles */
+  .nav-link {
+    @apply text-gray-700 hover:text-blue-600 dark:text-gray-300 
+    dark:hover:text-blue-400 px-3 py-2 text-sm font-medium;
+  }
+
+  /* Active navigation link */
+  .nav-link-active {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  /* Container styles */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Main content area */
+  .main-content {
+    @apply py-6 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Footer styles */
+  .footer {
+    @apply bg-white dark:bg-gray-800 shadow mt-auto;
+  }
+
+  /* Mobile menu styles */
+  .mobile-menu {
+    @apply md:hidden px-2 pt-2 pb-3 space-y-1;
+  }
+
+  /* Dark mode toggle button */
+  .dark-mode-toggle {
+    @apply p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700;
+  }
+}
+
+/* Utility classes for dark mode */
+.dark {
+  @apply bg-gray-900 text-white;
+}
+
+/* Animation utilities */
+.transition-standard {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Responsive utilities */
+@screen md {
+  .container-custom {
+    @apply px-6;
+  }
+}
+
+@screen lg {
+  .container-custom {
+    @apply px-8;
+  }
+}
