@@ -5,7 +5,8 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   root: './',
-  base: '/',
+  // Change base to your repository name for GitHub Pages
+  base: '/john-bennette-portfolio/',
   server: {
     port: 5173,
     host: true
@@ -17,6 +18,8 @@ export default defineConfig({
   },
   build: {
     outDir: './dist',
-    emptyOutDir: true
+    emptyOutDir: true,
+    // Add sourcemap for better debugging
+    sourcemap: true
   }
 })
