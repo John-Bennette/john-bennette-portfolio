@@ -1,23 +1,123 @@
-/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles for your portfolio */
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-[#0f172a] text-gray-900 dark:text-white;
+  }
+
+  /* Smooth transitions for dark mode */
+  body, 
+  div, 
+  section, 
+  nav,
+  header,
+  footer {
+    @apply transition-colors duration-200;
+  }
+}
+
 @layer components {
+  /* Layout utility classes */
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 py-12;
+  }
+
+  /* Typography */
+  .section-title {
+    @apply text-3xl font-bold text-gray-900 dark:text-white mb-6;
+  }
+
   .section-heading {
-    @apply text-3xl font-bold text-gray-900 mb-8 text-center;
+    @apply text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center;
   }
 
+  /* Cards and containers */
   .card {
-    @apply bg-white rounded-lg p-6 shadow-sm;
+    @apply bg-white dark:bg-gray-800/50 rounded-lg shadow-lg p-6 
+           backdrop-blur hover:shadow-xl transition-all duration-200;
   }
 
+  .card-dark {
+    @apply bg-gray-800/50 backdrop-blur;
+  }
+
+  /* Buttons */
   .btn-primary {
-    @apply bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700;
+    @apply bg-blue-600 text-white px-6 py-3 rounded-lg 
+           hover:bg-blue-700 transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-gray-900;
+    @apply border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-lg 
+           hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-900 dark:text-white
+           transition-colors duration-200;
   }
+
+  /* Links */
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-300 
+           hover:text-blue-600 dark:hover:text-blue-400 
+           transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  /* Form elements */
+  .input-field {
+    @apply w-full px-4 py-2 rounded-lg 
+           bg-white dark:bg-gray-800 
+           border border-gray-300 dark:border-gray-700
+           text-gray-900 dark:text-white
+           focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+
+  /* Interactive elements */
+  .hover-card {
+    @apply transform transition-all hover:scale-105 hover:shadow-xl;
+  }
+
+  /* Focus states */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 
+           dark:focus:ring-offset-gray-900;
+  }
+}
+
+/* Page transitions */
+.page-transition-enter {
+  @apply opacity-0;
+}
+
+.page-transition-enter-active {
+  @apply opacity-100 transition-opacity duration-300;
+}
+
+.page-transition-exit {
+  @apply opacity-100;
+}
+
+.page-transition-exit-active {
+  @apply opacity-0 transition-opacity duration-300;
 }

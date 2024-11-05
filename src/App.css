@@ -1,38 +1,40 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark {
+  color-scheme: dark;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@layer components {
+  .page-title {
+    @apply text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .section-title {
+    @apply text-3xl font-bold text-gray-900 dark:text-white mb-6;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-lg 
+           hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Transition styles */
+.page-transition {
+  @apply transition-all duration-300;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Dark mode transition */
+body {
+  @apply transition-colors duration-200;
 }
