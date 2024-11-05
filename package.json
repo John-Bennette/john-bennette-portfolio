@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://johnbennette.github.io/john-bennette-portfolio",
+  {
+    "homepage": "https://john-bennette.github.io/john-bennette-portfolio",
+    // ... rest of your package.json
+  }
   "scripts": {
     "dev": "vite",
     "build": "vite build",
