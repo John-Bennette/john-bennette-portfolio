@@ -1,25 +1,17 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  root: './',
-  // Change base to your repository name for GitHub Pages
-  base: '/john-bennette-portfolio/',
-  server: {
-    port: 5173,
-    host: true
+  base: './',  // Change this line
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': '/src'
     }
-  },
-  build: {
-    outDir: './dist',
-    emptyOutDir: true,
-    // Add sourcemap for better debugging
-    sourcemap: true
   }
-})
+});
