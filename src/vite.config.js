@@ -4,27 +4,18 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/john-bennette-portfolio/',  // Changed back for GitHub Pages
   server: {
     port: 5173,
     open: true
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
+      '@': path.resolve(__dirname, 'src')
+    }
   },
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      },
-      external: []
-    }
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom']
+    assetsDir: 'assets'
   }
 })
