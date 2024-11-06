@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
@@ -11,13 +10,12 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          if (/\.(png|jpe?g|gif|svg|ico)$/i.test(assetInfo.name)) {
-            return 'images/[name][extname]'
+          const imgRE = /\.(png|jpe?g|gif|svg|ico)$/i
+          if (imgRE.test(assetInfo.name)) {
+            return `images/${assetInfo.name}`
           }
-          return 'assets/[name]-[hash][extname]'
-        },
-        chunkFileNames: 'js/[name]-[hash].js',
-        entryFileNames: 'js/[name]-[hash].js'
+          return `assets/${assetInfo.name}-[hash][extname]`
+        }
       }
     }
   }
