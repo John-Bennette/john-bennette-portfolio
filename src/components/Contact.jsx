@@ -1,4 +1,3 @@
-// src/components/Contact.jsx - Updated with matching theme
 import React, { useState } from 'react';
 import { Mail, Linkedin, Send, Loader, CheckCircle, AlertCircle } from 'lucide-react';
 
@@ -42,8 +41,8 @@ const Contact = () => {
             <div className="flex justify-center md:justify-start">
               <div className="relative w-64 h-64 rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="/images/profile.jpg" 
-                  alt="John Bennette" 
+                  src={`${import.meta.env.VITE_SITE_URL}/images/Johns profile pic.png`}
+                  alt="John Bennette"
                   className="object-cover w-full h-full"
                 />
               </div>
@@ -56,14 +55,14 @@ const Contact = () => {
               </h2>
               <div className="space-y-4">
                 <a 
-                  href="mailto:jbennette.tech@gmail.com"
+                  href={`mailto:${import.meta.env.VITE_CONTACT_EMAIL}`}
                   className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   <Mail className="w-6 h-6" />
-                  <span>jbennette.tech@gmail.com</span>
+                  <span>{import.meta.env.VITE_CONTACT_EMAIL}</span>
                 </a>
                 <a 
-                  href="https://www.linkedin.com/in/john-bennette-587b3710b"
+                  href={import.meta.env.VITE_LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors"
