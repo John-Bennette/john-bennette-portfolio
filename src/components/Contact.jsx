@@ -41,7 +41,7 @@ const Contact = () => {
             <div className="flex justify-center md:justify-start">
               <div className="relative w-64 h-64 rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src={`${import.meta.env.VITE_SITE_URL}/images/Johns profile pic.png`}
+                  src={`${import.meta.env.BASE_URL}images/Johns profile pic.png`}
                   alt="John Bennette"
                   className="object-cover w-full h-full"
                 />
