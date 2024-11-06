@@ -6,15 +6,19 @@ export default defineConfig({
   plugins: [react()],
   base: '/john-bennette-portfolio/',
   build: {
-    outDir: 'dist'
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src')
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (/\.(png|jpe?g|gif|svg|ico)$/i.test(assetInfo.name)) {
+            return 'images/[name][extname]'
+          }
+          return 'assets/[name]-[hash][extname]'
+        },
+        chunkFileNames: 'js/[name]-[hash].js',
+        entryFileNames: 'js/[name]-[hash].js'
+      }
     }
-  },
-  server: {
-    port: 5173,
-    open: true
   }
 })
