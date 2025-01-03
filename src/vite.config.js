@@ -10,13 +10,13 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          const imgRE = /\.(png|jpe?g|gif|svg|ico)$/i
+          const imgRE = /\.(png|jpe?g|gif|svg|ico)$/i;
           if (imgRE.test(assetInfo.name)) {
-            return `images/${assetInfo.name}`
+            return `images/${assetInfo.name}`;
           }
-          return `assets/${assetInfo.name}-[hash][extname]`
+          return `assets/${assetInfo.name}-[hash][extname]`;
         }
       }
     }
   }
-})
+});
